@@ -22,9 +22,14 @@
 
         <Button
             android:id="@+id/button2"
+            style="@android:style/Widget.Material.Button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#03A9F4"
             android:text="@string/show_result"
+            android:textAppearance="@android:style/TextAppearance.Material"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
             tools:text="Show Result" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

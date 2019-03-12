@@ -9,10 +9,10 @@
     <LinearLayout
         android:layout_width="412dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="41.57dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,32 +71,43 @@
                 style="@android:style/Widget.Material.Button"
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
+                android:background="#03A9F4"
                 android:onClick="goToCandidateEdit"
                 android:padding="10dp"
                 android:text="@string/edit"
-                android:textAppearance="@android:style/TextAppearance.Material.Widget.Button" />
+                android:textAppearance="@android:style/TextAppearance.Material.Widget.Button"
+                android:textColor="#ffff"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/button3"
                 style="@android:style/Widget.Material.Button"
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
+                android:background="#03A9F4"
                 android:onClick="goToCandidateAdd"
                 android:padding="10dp"
                 android:text="@string/add"
-                android:textAppearance="@android:style/TextAppearance.Material.Widget.Button" />
+                android:textAppearance="@android:style/TextAppearance.Material.Widget.Button"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/button4"
                 style="@android:style/Widget.Material.Button"
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
+                android:background="#03A9F4"
                 android:padding="10dp"
                 android:text="@string/delete"
-                android:textAppearance="@android:style/TextAppearance.Material.Widget.Button" />
+                android:textAppearance="@android:style/TextAppearance.Material.Widget.Button"
+                android:textColor="#FFF" />
         </LinearLayout>
 
     </LinearLayout>
