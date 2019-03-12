@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="41.57dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
     tools:context=".Candidate_Info_Activity">
 
     <LinearLayout
@@ -22,30 +26,47 @@
 
         <Button
             android:id="@+id/button6"
+            style="@android:style/Widget.Material.Button"
             android:layout_width="392dp"
             android:layout_height="155dp"
+            android:layout_marginBottom="10dp"
+            android:background="#03A9F4"
             android:text="@string/candidate_1"
+            android:textAppearance="@android:style/TextAppearance.Material"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
             tools:text="Candidate 1" />
 
         <Button
             android:id="@+id/button7"
+            style="@android:style/Widget.Material.Button"
             android:layout_width="match_parent"
             android:layout_height="157dp"
+            android:layout_marginBottom="10dp"
+            android:background="#03A9F4"
             android:text="@string/candidate_2"
+            android:textColor="#FFFFFF"
             tools:text="Candidate 2" />
 
         <Button
             android:id="@+id/button8"
+            style="@android:style/Widget.Material.Button"
             android:layout_width="match_parent"
             android:layout_height="159dp"
+            android:layout_marginBottom="10dp"
+            android:background="#03A9F4"
             android:text="@string/candidate_3"
+            android:textColor="#FFFFFF"
             tools:text="Candidate 3" />
 
         <Button
             android:id="@+id/button9"
+            style="@android:style/Widget.Material.Button"
             android:layout_width="match_parent"
             android:layout_height="157dp"
+            android:background="#03A9F4"
             android:text="@string/candidate_4"
+            android:textColor="#FFFFFF"
             tools:text="Candidate 4" />
     </LinearLayout>
 
