@@ -7,12 +7,16 @@
     tools:context=".Candidate_Edit_Activity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="345dp"
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="41.57dp"
+        android:layout_marginEnd="24dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/Done"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -30,7 +34,7 @@
                 android:layout_marginEnd="11dp"
                 android:layout_marginBottom="49dp"
                 android:text="@string/candidate_name"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#000000"
                 app:layout_constraintBottom_toTopOf="@+id/textPartyName"
                 app:layout_constraintEnd_toStartOf="@+id/Candidate_Name"
                 app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +70,7 @@
                 android:layout_marginEnd="11dp"
                 android:layout_marginBottom="68dp"
                 android:text="@string/party_name"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#000000"
                 app:layout_constraintBottom_toTopOf="@+id/textDescription"
                 app:layout_constraintEnd_toStartOf="@+id/Party_Name"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -99,15 +103,15 @@
                 android:layout_marginEnd="11dp"
                 android:layout_marginBottom="485dp"
                 android:text="@string/description"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#000000"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/Description"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:id="@+id/Description"
-                android:layout_width="252dp"
-                android:layout_height="89dp"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
                 android:layout_marginStart="11dp"
                 android:layout_marginTop="33dp"
                 android:autofillHints=""
@@ -126,16 +130,15 @@
         style="@android:style/Widget.Material.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="284dp"
+        android:layout_marginTop="20dp"
         android:background="#0288D1"
-        android:text="@string/button"
+        android:text="@string/done"
         android:textAppearance="@android:style/TextAppearance.Material"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Done" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
 </android.support.constraint.ConstraintLayout>
