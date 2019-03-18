@@ -1,8 +1,8 @@
 package com.example.votingsystem;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 public class Dashboard_Voter_Activity extends AppCompatActivity {
@@ -28,4 +28,5 @@ public class Dashboard_Voter_Activity extends AppCompatActivity {
         Intent intent = new Intent(this, Result_Activity.class);
         startActivity(intent);
     }
+
 }
