@@ -19,9 +19,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-
-
-
+    
+        protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    
     public void goToAdmin(View view)
     {
         Intent intent = new Intent(this, Dashboard_Admin_Activity.class);
