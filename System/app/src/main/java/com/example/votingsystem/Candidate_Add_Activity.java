@@ -42,7 +42,7 @@ public class Candidate_Add_Activity extends AppCompatActivity {
         dataToSave.put("Party",party);
         dataToSave.put("Description",des);
 
-        db.collection("Candidate").document("Candidate"+candy).set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
+        db.collection("Candidate").document("Candidate "+candy).set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 Log.d(TAG, "Data Fetched");
