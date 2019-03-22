@@ -17,8 +17,7 @@ import java.util.Map;
 public class Candidate_Add_Activity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     protected static final String TAG = "Done";
-    public int candy = 1;
-
+    public int candy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +45,9 @@ public class Candidate_Add_Activity extends AppCompatActivity {
             @Override
             public void onSuccess(Void aVoid) {
                 Log.d(TAG, "Data Fetched");
-                Name.clearComposingText();
-                Party.clearComposingText();
-                Des.clearComposingText();
+                Name.setText("");
+                Party.setText("");
+                Des.setText("");
                 candy = candy +1;
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -58,5 +57,4 @@ public class Candidate_Add_Activity extends AppCompatActivity {
             }
         });
     }
-
 }
