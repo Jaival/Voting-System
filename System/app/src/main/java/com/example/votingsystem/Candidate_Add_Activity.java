@@ -9,7 +9,6 @@ import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -29,9 +28,9 @@ public class Candidate_Add_Activity extends AppCompatActivity {
 
     public void send_data(View view)
     {
-        EditText Name = findViewById(R.id.CandidateName);
-        EditText Party = findViewById(R.id.PartyName);
-        EditText Des = findViewById(R.id.Description);
+        final EditText Name = findViewById(R.id.CandidateName);
+        final EditText Party = findViewById(R.id.PartyName);
+        final EditText Des = findViewById(R.id.Description);
 
         String name = Name.getText().toString();
         String party = Party.getText().toString();
@@ -42,10 +41,14 @@ public class Candidate_Add_Activity extends AppCompatActivity {
         dataToSave.put("Party",party);
         dataToSave.put("Description",des);
 
-        db.collection("Candidate").document("Candidate "+candy).set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
+        db.collection("Candidate").document("Candidate "+candy).set(dataToSave)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 Log.d(TAG, "Data Fetched");
+                Name.clearComposingText();
+                Party.clearComposingText();
+                Des.clearComposingText();
                 candy = candy +1;
             }
         }).addOnFailureListener(new OnFailureListener() {
