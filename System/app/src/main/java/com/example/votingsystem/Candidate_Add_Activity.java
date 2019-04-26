@@ -17,7 +17,7 @@ import java.util.Map;
 public class Candidate_Add_Activity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     protected static final String TAG = "Done";
-    public int candy;
+    public int candy = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

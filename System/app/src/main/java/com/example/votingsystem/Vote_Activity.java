@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -26,8 +27,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Vote_Activity extends AppCompatActivity {
-    DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference condRef = rootRef.child("Candidate");
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    protected static final String TAG = "Done";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,19 +44,167 @@ public class Vote_Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.candi_1) {
                     Toast.makeText(Vote_Activity.this, "Candidate 1 selected!", Toast.LENGTH_LONG).show();
-                    condRef.setValue("1");
+
                 } else if (checkedId == R.id.candi_2) {
                     Toast.makeText(Vote_Activity.this, "Candidate 2 selected!", Toast.LENGTH_LONG).show();
-                    condRef.setValue("2");
+
                 } else if (checkedId == R.id.candi_3) {
                     Toast.makeText(Vote_Activity.this, "Candidate 3 selected!", Toast.LENGTH_LONG).show();
-                    condRef.setValue("3");
+
                 } else if (checkedId == R.id.candi_4) {
 
                     Toast.makeText(Vote_Activity.this, "Candidate 4 selected!", Toast.LENGTH_LONG).show();
-                    condRef.setValue("4");
+
                 }
                 rg.getCheckedRadioButtonId();
+            }
+        });
+        final Button b = findViewById(R.id.Vote);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int index = rg.indexOfChild(findViewById(rg.getCheckedRadioButtonId()));
+                if(index==0){
+                    DocumentReference c1 = db.collection("Vote").document("Candidate 1");
+                    c1.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task< DocumentSnapshot > task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot val = task.getResult();
+                                assert val != null;
+                                int mat = Integer.parseInt(val.get("Count").toString());
+                                mat = mat + 1;
+                                String put = String.valueOf(mat);
+                                Map<String,Object> dataToSave = new HashMap<>();
+                                dataToSave.put("Count",put);
+                                db.collection("Vote").document("Candidate 1").set(dataToSave)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Log.d(TAG, "Data Updated");
+                                            }
+                                        }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w(TAG, "Error", e);
+                                    }
+                                });
+                            }
+
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w(TAG, "Error", e);
+                        }
+                    });
+                }
+                else if(index==1){
+                    DocumentReference c1 = db.collection("Vote").document("Candidate 2");
+                    c1.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task< DocumentSnapshot > task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot val = task.getResult();
+                                assert val != null;
+                                int mat = Integer.parseInt(val.get("Count").toString());
+                                mat = mat + 1;
+                                String put = String.valueOf(mat);
+                                Map<String,Object> dataToSave = new HashMap<>();
+                                dataToSave.put("Count",put);
+                                db.collection("Vote").document("Candidate 2").set(dataToSave)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Log.d(TAG, "Data Updated");
+                                            }
+                                        }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w(TAG, "Error", e);
+                                    }
+                                });
+                            }
+
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w(TAG, "Error", e);
+                        }
+                    });
+                }
+                else if(index==2){
+                    DocumentReference c1 = db.collection("Vote").document("Candidate 3");
+                    c1.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task< DocumentSnapshot > task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot val = task.getResult();
+                                assert val != null;
+                                int mat = Integer.parseInt(val.get("Count").toString());
+                                mat = mat + 1;
+                                String put = String.valueOf(mat);
+                                Map<String,Object> dataToSave = new HashMap<>();
+                                dataToSave.put("Count",put);
+                                db.collection("Vote").document("Candidate 3").set(dataToSave)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Log.d(TAG, "Data Updated");
+                                            }
+                                        }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w(TAG, "Error", e);
+                                    }
+                                });
+                            }
+
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w(TAG, "Error", e);
+                        }
+                    });
+                }
+                else if(index==3){
+                    DocumentReference c1 = db.collection("Vote").document("Candidate 4");
+                    c1.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task< DocumentSnapshot > task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot val = task.getResult();
+                                assert val != null;
+                                int mat = Integer.parseInt(val.get("Count").toString());
+                                mat = mat + 1;
+                                String put = String.valueOf(mat);
+                                Map<String,Object> dataToSave = new HashMap<>();
+                                dataToSave.put("Count",put);
+                                db.collection("Vote").document("Candidate 4").set(dataToSave)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Log.d(TAG, "Data Updated");
+                                            }
+                                        }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w(TAG, "Error", e);
+                                    }
+                                });
+                            }
+
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w(TAG, "Error", e);
+                        }
+                    });
+                }
+
             }
         });
     }
