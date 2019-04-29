@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".Dashboard_Voter_Activity">
 
+    <Button
+        android:id="@+id/Logout"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="106dp"
+        android:onClick="Logout"
+        android:text="@string/logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"

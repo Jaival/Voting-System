@@ -28,4 +28,13 @@
     <string name="fetch">Fetch</string>
     <string name="button">Button</string>
     <string name="done">Done</string>
+    <string name="admin_login">Admin Login</string>
+    <string name="login">Login</string>
+    <string name="numbe">Numbe</string>
+    <string name="logout">Logout</string>
+    <string name="enter_your_otp_here">Enter your OTP here</string>
+    <string name="sign_in">Sign In</string>
+    <string name="otp">OTP</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
 </resources>
