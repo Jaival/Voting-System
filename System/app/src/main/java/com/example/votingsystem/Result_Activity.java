@@ -3,6 +3,7 @@ package com.example.votingsystem;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,10 +25,9 @@ public class Result_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-        show_result();
     }
 
-    public void show_result()
+    public void show_result(View view)
     {
         final TextView textDisplay = findViewById(R.id.First);
         candi1.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -36,7 +36,7 @@ public class Result_Activity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot doc = task.getResult();
                     assert doc != null;
-                    String fields = "Name: " + doc.get("Candidate 1") +
+                    String fields = "Candidate 1: "+
                             "\nvotes are " + doc.get("count");
                     textDisplay.setText(fields);
                 }
@@ -50,7 +50,7 @@ public class Result_Activity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot doc = task.getResult();
                     assert doc != null;
-                    String fields = "Name: " + doc.get("Candidate 2") +
+                    String fields = "Candidate 2: "+
                             "\nvotes are " + doc.get("count");
                     textDisplay1.setText(fields);
                 }
@@ -65,7 +65,7 @@ public class Result_Activity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot doc = task.getResult();
                     assert doc != null;
-                    String fields = "Name: " + doc.get("Candidate 3") +
+                    String fields = "Candidate 3: "+
                             "\nvotes are " + doc.get("count");
                     textDisplay2.setText(fields);
                 }
@@ -80,7 +80,7 @@ public class Result_Activity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot doc = task.getResult();
                     assert doc != null;
-                    String fields = "Name: " + doc.get("Candidate 4") +
+                    String fields = "Candidate 4: "+
                             "\nvotes are " + doc.get("count");
                     textDisplay3.setText(fields);
                 }
