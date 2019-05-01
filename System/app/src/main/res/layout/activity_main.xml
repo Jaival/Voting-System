@@ -26,7 +26,7 @@
             android:layout_margin="20dp"
             android:autofillHints=""
             android:ems="10"
-            android:hint="@string/numbe"
+            android:hint="@string/number"
             android:inputType="number" />
     </android.support.v7.widget.CardView>
 

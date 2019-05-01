@@ -24,6 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Vote_Activity extends AppCompatActivity {
+
     DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
     DatabaseReference condRef = rootRef.child("Candidate");
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -32,17 +33,16 @@ public class Vote_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vote);
         canrad();
-        final Button btn = (Button) findViewById(R.id.Vote);
+        final Button btn = findViewById(R.id.Vote);
         btn.setEnabled(false);
     }
 
     public void canrad(){
         final RadioGroup rg = findViewById(R.id.radioGroup2);
-        final Button btn = (Button) findViewById(R.id.Vote);
+        final Button btn = findViewById(R.id.Vote);
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -62,7 +62,6 @@ public class Vote_Activity extends AppCompatActivity {
                     btn.setEnabled(true);
 
                 } else if (checkedId == R.id.candi_4) {
-
                     Toast.makeText(Vote_Activity.this, "Candidate 4 selected!", Toast.LENGTH_LONG).show();
                     condRef.setValue("4");
                     btn.setEnabled(true);
@@ -71,8 +70,8 @@ public class Vote_Activity extends AppCompatActivity {
                 rg.getCheckedRadioButtonId();
             }
         });
-        final Button b = findViewById(R.id.Vote);
-        b.setOnClickListener(new View.OnClickListener() {
+
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int index = rg.indexOfChild(findViewById(rg.getCheckedRadioButtonId()));
@@ -102,7 +101,6 @@ public class Vote_Activity extends AppCompatActivity {
                                     }
                                 });
                             }
-
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -137,7 +135,6 @@ public class Vote_Activity extends AppCompatActivity {
                                     }
                                 });
                             }
-
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -172,7 +169,6 @@ public class Vote_Activity extends AppCompatActivity {
                                     }
                                 });
                             }
-
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -207,7 +203,6 @@ public class Vote_Activity extends AppCompatActivity {
                                     }
                                 });
                             }
-
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -216,13 +211,12 @@ public class Vote_Activity extends AppCompatActivity {
                         }
                     });
                 }
-
             }
         });
     }
 
-    public void gotomainActivity(View view){
-        Intent intent = new Intent(this, MainActivity.class);
+    public void Logout(View view){
+        Intent intent = new Intent(this, Dashboard_Voter_Activity.class);
         startActivity(intent);
     }
 }

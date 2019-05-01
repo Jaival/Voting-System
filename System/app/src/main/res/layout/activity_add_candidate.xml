@@ -115,7 +115,7 @@
     </FrameLayout>
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/AddC"
         style="@android:style/Widget.Material.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

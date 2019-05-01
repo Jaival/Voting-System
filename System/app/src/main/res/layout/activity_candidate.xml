@@ -79,7 +79,7 @@
             android:textColor="#FFFFFF" />
 
         <Button
-            android:id="@+id/Add"
+            android:id="@+id/AddC"
             style="@android:style/Widget.Material.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

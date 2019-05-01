@@ -17,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Dashboard_Voter_Activity extends AppCompatActivity {
     DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
     DatabaseReference condRef = rootRef.child("condition_result");
-    DatabaseReference condref = rootRef.child("condition");
+    DatabaseReference condref1 = rootRef.child("condition");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class Dashboard_Voter_Activity extends AppCompatActivity {
 
     public void disableVote() {
         final Button Vote = findViewById(R.id.vote);
-        condref.addValueEventListener(new ValueEventListener() {
+        condref1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String text = dataSnapshot.getValue(String.class);
@@ -72,9 +72,7 @@ public class Dashboard_Voter_Activity extends AppCompatActivity {
                 }
                 else if (text.equals("0")) {
                     Result.setEnabled(false);
-                }
-                }
-
+                }}
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 

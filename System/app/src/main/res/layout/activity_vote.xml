@@ -57,7 +57,7 @@
         android:layout_marginTop="32dp"
         android:background="#03A9F4"
         android:enabled="false"
-        android:onClick="gotomainActivity"
+        android:onClick="Logout"
         android:text="@string/vote"
         android:textAppearance="@android:style/TextAppearance.Material"
         android:textColor="#FFFFFF"
